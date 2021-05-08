@@ -39,27 +39,24 @@ public class MainActivity extends AppCompatActivity {
 
         webView.loadUrl( url );
 
-
     }
 
     public void sendResponseToWebView( String response ) {
 
-            try {
+        try {
 
-                // Execute javascript function in the WebView
-                // The important part is that is has to run in the UI Thread!!!
-                runOnUiThread( () -> webView.loadUrl( "javascript:receiveResponse('" + response + "');" ) );
+            // Execute javascript function in the WebView
+            // The important part is that is has to run in the UI Thread!!!
+            runOnUiThread( () -> webView.loadUrl( "javascript:receiveResponse('" + response + "');" ) );
 
-            } catch ( Exception ex ) {
+        } catch ( Exception ex ) {
 
-                Log.d( TAG, ex.toString() );
-
-            }
-
-            // Also show a native message/toast to demonstrate that the app (code) is active besides the WebView.
-            Toast.makeText( webView.getContext(), "I got your message, thanks!", Toast.LENGTH_LONG ).show();
+            Log.d( TAG, ex.toString() );
 
         }
+
+        // Also show a native message/toast to demonstrate that the app (code) is active besides the WebView.
+        Toast.makeText( webView.getContext(), "I got your message, thanks!", Toast.LENGTH_LONG ).show();
 
     }
 
