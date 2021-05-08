@@ -7,9 +7,9 @@ import java.util.Arrays;
 
 public class WebAppInterface {
 
-    private Context context;
+    private final Context context;
 
-    private MainActivity mainActivity;
+    private final MainActivity mainActivity;
 
     public WebAppInterface( Context context, MainActivity mainActivity ) {
 
