@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>WebView 2-Way Communication Tutorial</title>
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+
+        <form id="Demo" action="javascript:void(0);" method="GET">
+            <ul>
+                <li id="Demo-Message">
+                    <label for="Demo-Message-Input" class="webview"><span>WebView</span> Message &#8614;</label>
+                    <input type="text" id="Demo-Message-Input" name="Demo-Message-Input" />
+                    <input type="submit" value="Send" />
+                </li>
+                <li id="Demo-Response" class="hidden">
+                    <label class="app">&#8676; <span>App</span> Response</label>
+                    <div id="Demo-Response-Output">&nbsp;</div>
+                </li>
+            </ul>
+        </form>
+
+        <script src="./js/script.js"></script>
+    </body>
+</html>
