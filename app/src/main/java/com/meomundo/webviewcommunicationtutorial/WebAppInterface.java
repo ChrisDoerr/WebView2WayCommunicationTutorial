@@ -1,6 +1,7 @@
 package com.meomundo.webviewcommunicationtutorial;
 
 import android.content.Context;
+import android.webkit.JavascriptInterface;
 
 public class WebAppInterface {
 
@@ -12,6 +13,14 @@ public class WebAppInterface {
 
         this.context        = context;
         this.mainActivity   = mainActivity;
+
+    }
+
+    @JavascriptInterface
+    // This method will be available from within the WebView's Javascript code.
+    public void receiveMessage( String message ) {
+
+        mainActivity.sendResponseToWebView( message );
 
     }
 
