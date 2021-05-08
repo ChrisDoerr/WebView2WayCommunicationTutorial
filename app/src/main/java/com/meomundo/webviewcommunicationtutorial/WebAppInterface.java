@@ -22,13 +22,13 @@ public class WebAppInterface {
     // This method will be available from within the WebView's Javascript code.
     public void receiveMessage( String message ) {
 
-        String processedData = processMessage( message );
+        String processedData = processMessage( message.toLowerCase() );
 
         mainActivity.sendResponseToWebView( processedData );
 
     }
 
-    public String processMessage( String message ) {
+    private String processMessage( String message ) {
 
         char []chars = message.toCharArray();
 
