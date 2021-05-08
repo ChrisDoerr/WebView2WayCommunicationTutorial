@@ -24,12 +24,21 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView( R.layout.activity_main );
 
-        webView = findViewById( R.id.mainWebView );
+        webView                 = findViewById( R.id.mainWebView );
 
         webView.setWebViewClient( new WebViewClient() );
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled( true );
+
+        // Here,"AndroidApp" will be registered so it can be called from the WebView's Javascript code.
+        webView.addJavascriptInterface( new WebAppInterface( webView.getContext(), this ), "AndroidApp" );
+
+        // LOCAL HTML app.
+        String url              = "file:///android_asset/html/index.html";
+
+        webView.loadUrl( url );
+
 
     }
 
